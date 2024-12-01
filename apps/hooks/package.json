@@ -1,10 +1,11 @@
 {
-  "name": "hooks",
+  "name": "@repo/hooks",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon ./src/index.ts"
+    "dev": "nodemon ./src/index.ts",
+    "build": "npx esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node --tsconfig=tsconfig.json"
   },
   "dependencies": {
     "@repo/db": "*",
