@@ -1,0 +1,18 @@
+{
+  "name": "processor",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc -b && node dist/index.js",
+    "build": "npx esbuild src/index.ts --bundle --outfile=dist/index.js --platform=node --tsconfig=tsconfig.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@repo/db": "*",
+    "kafkajs": "^2.2.4",
+    "nodemon": "^3.1.7"
+  }
+}
