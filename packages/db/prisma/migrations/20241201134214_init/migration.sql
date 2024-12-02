@@ -1,0 +1,9 @@
+-- DropForeignKey
+ALTER TABLE "Zap" DROP CONSTRAINT "Zap_userId_fkey";
+
+-- AlterTable
+ALTER TABLE "Zap" ALTER COLUMN "triggerId" DROP NOT NULL,
+ALTER COLUMN "userId" DROP NOT NULL;
+
+-- AddForeignKey
+ALTER TABLE "Zap" ADD CONSTRAINT "Zap_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User"("id") ON DELETE SET NULL ON UPDATE CASCADE;

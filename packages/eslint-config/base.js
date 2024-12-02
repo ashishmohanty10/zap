@@ -18,6 +18,7 @@ export const config = [
       turbo: turboPlugin,
     },
     rules: {
+      allowShortCircuit: true,
       "turbo/no-undeclared-env-vars": "warn",
     },
   },
