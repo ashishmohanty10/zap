@@ -54,3 +54,45 @@ export async function signup(req: Request, res: Response, next: NextFunction) {
     return next(createHttpError(500, "Internal server error!!"));
   }
 }
+
+export async function login(req: Request, res: Response, next: NextFunction) {
+  const { email, password } = req.body;
+
+  if (!email || !password) {
+    return next(createHttpError(400, "All fields are required"));
+  }
+
+  try {
+    const user = await prisma.user.findUnique({
+      where: {
+        email,
+      },
+    });
+
+    if (!user) {
+      return next(createHttpError(400, "User not found"));
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return next(createHttpError(400, "Username or password incorrect"));
+    }
+
+    const token = jwt.sign(
+      {
+        userId: user.id,
+      },
+      config.jwtSecret as string,
+      { expiresIn: "7d" }
+    );
+
+    res.status(200).json({
+      message: `${user.id} logged in successfully`,
+      access_Token: token,
+    });
+  } catch (error) {
+    console.log("error", error);
+    return next(createHttpError(500, "Internal server error"));
+  }
+}
