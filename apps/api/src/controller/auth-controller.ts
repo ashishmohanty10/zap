@@ -4,31 +4,38 @@ import createHttpError from "http-errors";
 import jwt from "jsonwebtoken";
 import bcrypt from "bcryptjs";
 import { config } from "../config/config";
+import { signupSchema, loginSchema } from "@repo/common";
 
 export async function signup(req: Request, res: Response, next: NextFunction) {
   const { name, email, password } = req.body;
 
-  if (!name || !email || !password) {
-    return next(createHttpError(400, "All fields are required"));
+  const parsedData = signupSchema.safeParse({ name, email, password });
+
+  if (!parsedData.success) {
+    return next(
+      createHttpError(400, "Validation failed", {
+        details: parsedData.error.errors,
+      })
+    );
   }
 
   try {
-    const user = await prisma.user.findUnique({
+    const existingUser = await prisma.user.findUnique({
       where: {
-        email,
+        email: parsedData.data.email,
       },
     });
 
-    if (user) {
+    if (existingUser) {
       return next(createHttpError(409, "User already registered"));
     }
 
     try {
-      const hashedPassword = await bcrypt.hash(password, 10);
+      const hashedPassword = await bcrypt.hash(parsedData.data.password, 10);
       const newUser = await prisma.user.create({
         data: {
-          email,
-          name,
+          email: parsedData.data.email,
+          name: parsedData.data.name,
           password: hashedPassword,
         },
       });
@@ -42,7 +49,7 @@ export async function signup(req: Request, res: Response, next: NextFunction) {
       );
 
       res.status(201).json({
-        message: "User register successfully",
+        message: `${newUser.id} register successfully`,
         access_token: token,
       });
     } catch (error) {
@@ -58,22 +65,31 @@ export async function signup(req: Request, res: Response, next: NextFunction) {
 export async function login(req: Request, res: Response, next: NextFunction) {
   const { email, password } = req.body;
 
-  if (!email || !password) {
-    return next(createHttpError(400, "All fields are required"));
+  const parsedData = loginSchema.safeParse({ email, password });
+
+  if (!parsedData.success) {
+    return next(
+      createHttpError(400, "Validation failed", {
+        details: parsedData.error.errors,
+      })
+    );
   }
 
   try {
-    const user = await prisma.user.findUnique({
+    const existingUser = await prisma.user.findUnique({
       where: {
-        email,
+        email: parsedData.data.email,
       },
     });
 
-    if (!user) {
+    if (!existingUser) {
       return next(createHttpError(400, "User not found"));
     }
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await bcrypt.compare(
+      parsedData.data.password,
+      existingUser.password
+    );
 
     if (!isMatch) {
       return next(createHttpError(400, "Username or password incorrect"));
@@ -81,14 +97,14 @@ export async function login(req: Request, res: Response, next: NextFunction) {
 
     const token = jwt.sign(
       {
-        userId: user.id,
+        userId: existingUser.id,
       },
       config.jwtSecret as string,
       { expiresIn: "7d" }
     );
 
     res.status(200).json({
-      message: `${user.id} logged in successfully`,
+      message: `${existingUser.id} logged in successfully`,
       access_Token: token,
     });
   } catch (error) {
