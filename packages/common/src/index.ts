@@ -16,3 +16,14 @@ export const loginSchema = z.object({
     .min(5, { message: "Must be 5 or more characters long" }),
   password: z.string().min(8, { message: "Must be 8 or more characters long" }),
 });
+
+export const zapCreateSchema = z.object({
+  availableTriggerId: z.string(),
+  triggerMetadata: z.any().optional(),
+  actions: z.array(
+    z.object({
+      availableActionId: z.string(),
+      actionMetaData: z.any().optional(),
+    })
+  ),
+});

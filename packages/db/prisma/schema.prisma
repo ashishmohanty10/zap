@@ -17,12 +17,12 @@ model User {
 
 model Zap {
   id        String   @id @default(uuid())
-  triggerId String?
-  userId    String?
+  triggerId String
+  userId    String
   trigger   Trigger?
   actions   Action[]
   zapRuns   ZapRun[]
-  user      User?    @relation(fields: [userId], references: [id])
+  user      User     @relation(fields: [userId], references: [id])
 }
 
 model Trigger {
