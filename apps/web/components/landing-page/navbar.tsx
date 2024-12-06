@@ -19,7 +19,7 @@ export function Navbar() {
     >
       <Logo />
 
-      <div className="flex items-center gap-5">
+      <div className="flex items-center space-x-4">
         {navLinks.map((items) => (
           <Link
             href={items.link}

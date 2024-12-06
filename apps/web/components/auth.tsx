@@ -2,7 +2,7 @@ import { Button } from "@repo/ui/components/ui/button";
 
 export function AuthButton() {
   return (
-    <div className="flex items-center gap-6">
+    <div className="flex items-center space-x-3">
       <Button
         className="px-8 text-white text-base font-medium hover:text-black border border-slate-700 hover:border-slate-200"
         variant={"ghost"}

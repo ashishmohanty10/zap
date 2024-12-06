@@ -23,7 +23,7 @@ export function Feature() {
         {featuresAvailable.map((item) => (
           <Card
             key={item.title}
-            className="bg-gray-900 border border-slate-700 hover:border-slate-200 transition"
+            className="bg-bgCard border border-slate-700 hover:border-slate-400 transition"
           >
             <CardHeader>
               <div className="border border-slate-700 p-2 w-fit rounded-md">

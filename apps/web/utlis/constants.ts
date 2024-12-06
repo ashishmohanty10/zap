@@ -1,4 +1,13 @@
-import { Activity, Clock, Lock, Rocket, Workflow, Zap } from "lucide-react";
+import {
+  Activity,
+  ArrowRight,
+  Clock,
+  Lock,
+  Play,
+  Rocket,
+  Workflow,
+  Zap,
+} from "lucide-react";
 
 export const navLinks = [
   {
@@ -61,5 +70,23 @@ export const featuresAvailable = [
     description:
       "Your workflows run automatically, 24/7, without any manual intervention",
     icon: Clock,
+  },
+];
+
+export const workflow = [
+  {
+    title: "Choose a Trigger",
+    description: "Select an event that starts your workflow",
+    icon: Zap,
+  },
+  {
+    title: "Add Actions",
+    description: "Define what happens when the trigger fires",
+    icon: ArrowRight,
+  },
+  {
+    title: "Automate the Process",
+    description: "Let ZapFlow handle the rest automatically",
+    icon: Play,
   },
 ];

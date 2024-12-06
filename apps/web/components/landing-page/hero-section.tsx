@@ -17,7 +17,7 @@ export function Hero() {
 
       <AuthButton />
 
-      <div className="bg-gray-900 rounded-md border-8 border-slate-800 shadow-lg h-[600px] w-[1200px]"></div>
+      <div className="bg-stone-900 rounded-md border-8 border-slate-800 shadow-lg h-[600px] w-[1200px]"></div>
     </div>
   );
 }
