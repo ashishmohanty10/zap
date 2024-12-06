@@ -19,7 +19,7 @@ export function Navabar() {
             href={items.link}
             key={items.id}
             className={cn(
-              `font-semibold text-base text-white/70 hover:text-white transition`,
+              `font-medium text-base text-white/70 hover:text-white transition`,
               pathname === items.link ? "text-white" : ""
             )}
           >
@@ -29,8 +29,12 @@ export function Navabar() {
       </div>
 
       <div className="flex items-center gap-6">
-        <Button className="text-white">Login</Button>
-        <Button className="text-white">Sign Up</Button>
+        <Button className="text-white text-base font-medium hover:text-white/70">
+          Login
+        </Button>
+        <Button className=" text-base font-medium" variant={"secondary"}>
+          Sign Up
+        </Button>
       </div>
     </nav>
   );
