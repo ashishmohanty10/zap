@@ -18,7 +18,7 @@ export const navLinks = [
 
   {
     id: 2,
-    label: "How it Works",
+    label: "How-it-Works",
     link: "/working",
   },
 

@@ -19,13 +19,13 @@ export function Navbar() {
     >
       <Logo />
 
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-6 text-center">
         {navLinks.map((items) => (
           <Link
             href={items.link}
             key={items.id}
             className={cn(
-              `font-medium text-base text-stone-300/70 hover:text-stone-300 transition`,
+              `font-medium text-base text-stone-300/70 hover:text-stone-300 transition text-center`,
               pathname === items.link ? "text-stone-300" : ""
             )}
           >
@@ -42,7 +42,10 @@ export function Navbar() {
 export function Logo() {
   return (
     <Link href="/">
-      <ZapOff className="text-stone-300" />
+      <ZapOff
+        className="text-stone-500 hover:text-stone-200 transition"
+        size={44}
+      />
     </Link>
   );
 }

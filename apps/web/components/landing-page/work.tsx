@@ -19,19 +19,21 @@ export function Workflow() {
         </p>
       </div>
 
-      <div className="grid grid-cols-3 gap-10">
+      <div className="grid grid-cols-3 gap-10 px-4 md:px-6">
         {workflow.map((item, idx) => (
-          <Card className="bg-bgCard border-slate-700 hover:border-slate-400">
+          <Card className="bg-bgCard border-stone-700 hover:border-stone-400">
             <CardHeader className="space-y-2">
-              <h3 className="text-3xl text-slate-200 font-semibold">
+              <h3 className="text-3xl text-stone-400 font-semibold">
                 0{idx + 1}
               </h3>
-              <CardTitle className="text-slate-100 font-semibold text-lg">
+              <CardTitle className="text-stone-400 font-semibold text-lg">
                 {item.title}
               </CardTitle>
             </CardHeader>
             <CardContent>
-              <CardDescription>{item.description}</CardDescription>
+              <CardDescription className="text-stone-500">
+                {item.description}
+              </CardDescription>
             </CardContent>
           </Card>
         ))}
