@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "@repo/ui/globals.css";
-import { Navabar } from "@/components/landing-page/navbar";
+import { Navbar } from "@/components/landing-page/navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "ZAPS",
+  title: "zaps",
   description: "Automate your workflow with zaps",
 };
 
@@ -29,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-r from-neutral-950 via-slate-900 to-neutral-900`}
       >
-        <Navabar />
+        <Navbar />
 
         <main>{children}</main>
       </body>

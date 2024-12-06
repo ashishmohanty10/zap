@@ -1,19 +1,25 @@
 "use client";
 
 import { navLinks } from "@/utlis/constants";
-import { Button } from "@repo/ui/components/ui/button";
 import { cn } from "@repo/ui/lib/utils";
 import { ZapOff } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AuthButton } from "../auth";
+import { motion } from "motion/react";
 
-export function Navabar() {
+export function Navbar() {
   const pathname = usePathname();
   return (
-    <nav className="max-w-7xl mx-auto py-4 px-2 border-b border-neutral-700 flex items-center justify-between">
+    <motion.nav
+      initial={{ opacity: 0, y: -30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.3 }}
+      className="max-w-7xl mx-auto py-4 px-2 border-b border-neutral-700 flex items-center justify-between"
+    >
       <Logo />
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-5">
         {navLinks.map((items) => (
           <Link
             href={items.link}
@@ -28,15 +34,8 @@ export function Navabar() {
         ))}
       </div>
 
-      <div className="flex items-center gap-6">
-        <Button className="text-white text-base font-medium hover:text-white/70">
-          Login
-        </Button>
-        <Button className=" text-base font-medium" variant={"secondary"}>
-          Sign Up
-        </Button>
-      </div>
-    </nav>
+      <AuthButton />
+    </motion.nav>
   );
 }
 
