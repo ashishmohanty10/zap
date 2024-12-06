@@ -25,8 +25,8 @@ export function Navbar() {
             href={items.link}
             key={items.id}
             className={cn(
-              `font-medium text-base text-white/70 hover:text-white transition`,
-              pathname === items.link ? "text-white" : ""
+              `font-medium text-base text-stone-300/70 hover:text-stone-300 transition`,
+              pathname === items.link ? "text-stone-300" : ""
             )}
           >
             {items.label}
@@ -42,7 +42,7 @@ export function Navbar() {
 export function Logo() {
   return (
     <Link href="/">
-      <ZapOff className="text-white" />
+      <ZapOff className="text-stone-300" />
     </Link>
   );
 }

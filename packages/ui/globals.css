@@ -67,4 +67,8 @@
     @apply bg-background text-foreground;
     font-family: "General Sans", sans-serif;
   }
+
+  .title {
+    @apply bg-gradient-to-r from-stone-800 via-stone-500 to-stone-800 bg-clip-text text-transparent text-center;
+  }
 }

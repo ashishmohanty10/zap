@@ -5,16 +5,17 @@ import {
   CardDescription,
   CardHeader,
 } from "@repo/ui/components/ui/card";
+import { Separator } from "../separator";
 
 export function Feature() {
   return (
-    <div className="py-16 space-y-12">
+    <div className="py-16 space-y-12 flex flex-col items-center">
       <div className="space-y-2">
-        <h3 className="text-4xl font-bold bg-gradient-to-r from-slate-300 to-slate-500 bg-clip-text text-transparent text-center">
+        <h3 className="text-4xl font-bold title">
           Powerful Features for Your Workflow
         </h3>
 
-        <p className="text-center text-lg font-medium text-slate-400">
+        <p className="text-center text-lg font-medium text-stone-500">
           Everything you need to automate your work and boost productivity
         </p>
       </div>
@@ -27,20 +28,22 @@ export function Feature() {
           >
             <CardHeader>
               <div className="border border-slate-700 p-2 w-fit rounded-md">
-                <item.icon className="text-white" />
+                <item.icon className="text-stone-300" />
               </div>
 
               <p className="text-slate-100 font-medium text-lg">{item.title}</p>
             </CardHeader>
 
             <CardContent>
-              <CardDescription className="text-slate-400">
+              <CardDescription className="text-stone-500">
                 {item.description}
               </CardDescription>
             </CardContent>
           </Card>
         ))}
       </div>
+
+      <Separator />
     </div>
   );
 }
