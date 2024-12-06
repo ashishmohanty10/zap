@@ -6,7 +6,7 @@ module.exports = {
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
-    "../../packages/ui/./src/**/*.{ts,tsx}",
+    "../../packages/ui/src/components/ui/**/*.{ts,tsx}",
   ],
   prefix: "",
   theme: {
@@ -23,14 +23,6 @@ module.exports = {
         cardHeight: "500px",
       },
       colors: {
-        chatHeader: "hsla(255, 7%, 11%, 0.4)",
-        adminChat: "hsla(0, 100%, 69%, 0.2)",
-        userChat: "hsla(212, 100%, 18%, 0.06)",
-        webinarbg: "hsla(212, 100%, 18%, 1)",
-        buttonColor: "hsla(174, 72%, 56%, 1)",
-        hoverText: "hsla(212, 100%, 18%, 1)",
-        headerText: "hsla(255, 7%, 11%, 1)",
-        webinarHeader: "hsla(255, 7%, 11%, 0.6)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
