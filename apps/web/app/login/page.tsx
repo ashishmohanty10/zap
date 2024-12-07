@@ -28,7 +28,6 @@ export default function Login() {
 
   async function onSubmit(values: loginSchemaType) {
     try {
-      console.log(URL);
       const res = await axios.post(`${URL}/api/v1/user/login`, {
         email: values.email,
         password: values.password,
