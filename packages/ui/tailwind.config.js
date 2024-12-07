@@ -19,11 +19,10 @@ module.exports = {
     },
     extend: {
       spacing: {
-        buttonWidth: "349px",
         cardHeight: "500px",
       },
       colors: {
-        bgCard: "#171717",
+        bgCard: "#020617",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

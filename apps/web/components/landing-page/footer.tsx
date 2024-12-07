@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function FooterSection() {
   return (
-    <footer className="w-full py-12 text-stone-400">
+    <footer className="w-full py-12 text-slate-400">
       <div className="px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -17,22 +17,22 @@ export default function FooterSection() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="hover:text-stone-400">
+                <Link href="/" className="hover:text-slate-400">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/features" className="hover:text-stone-400">
+                <Link href="/features" className="hover:text-slate-400">
                   Features
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="hover:text-stone-400">
+                <Link href="/pricing" className="hover:text-slate-400">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="#Blog" className="hover:text-stone-400">
+                <Link href="#Blog" className="hover:text-slate-400">
                   Blog
                 </Link>
               </li>
@@ -42,12 +42,12 @@ export default function FooterSection() {
             <h4 className="text-lg font-semibold mb-4">Legal</h4>
             <ul className="space-y-2">
               <li>
-                <Link href="#service" className="hover:text-stone-400">
+                <Link href="#service" className="hover:text-slate-400">
                   Terms of Service
                 </Link>
               </li>
               <li>
-                <Link href="#policy" className="hover:text-stone-400">
+                <Link href="#policy" className="hover:text-slate-400">
                   Privacy Policy
                 </Link>
               </li>
@@ -62,15 +62,15 @@ export default function FooterSection() {
               <Input
                 type="email"
                 placeholder="Your email"
-                className="py-4 text-stone-400"
+                className="py-4 text-slate-400"
               />
-              <Button type="submit" className="bg-stone-700 hover:bg-stone-900">
+              <Button type="submit" className="bg-slate-700 hover:bg-slate-900">
                 Subscribe
               </Button>
             </form>
           </div>
         </div>
-        <div className="mt-8 pt-8 border-t border-stone-700 text-center text-sm">
+        <div className="mt-8 pt-8 border-t border-slate-700 text-center text-sm">
           © {new Date().getFullYear()} ZapFlow. All rights reserved.
         </div>
       </div>

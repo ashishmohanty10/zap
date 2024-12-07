@@ -9,7 +9,7 @@ export function Hero() {
           Simplify Your Workflows with Custom Automations
         </h1>
 
-        <p className="text-lg text-center font-semibold text-stone-500 w-[70%] mx-auto">
+        <p className="text-lg text-center font-semibold text-zinc-400 w-[70%] mx-auto">
           Create powerful automated workflows that connect your favorite apps
           and services. Save time and boost productivity with custom triggers
           and actions.
@@ -18,7 +18,7 @@ export function Hero() {
 
       <AuthButton />
 
-      <div className="bg-stone-900 rounded-md border-8 border-stone-600 shadow-lg h-[600px] w-[1200px]"></div>
+      <div className="bg-slate-900 rounded-md border-8 border-stone-600 shadow-lg h-[600px] w-[1200px]"></div>
 
       <Separator />
     </div>

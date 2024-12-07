@@ -27,3 +27,9 @@ export const zapCreateSchema = z.object({
     })
   ),
 });
+
+export type loginSchemaType = z.infer<typeof loginSchema>;
+
+export type signupSchemaType = z.infer<typeof signupSchema>;
+
+export type zapCreateSchemaType = z.infer<typeof zapCreateSchema>;

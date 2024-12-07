@@ -69,6 +69,10 @@
   }
 
   .title {
-    @apply bg-gradient-to-r from-stone-800 via-stone-500 to-stone-800 bg-clip-text text-transparent text-center;
+    @apply bg-gradient-to-r from-zinc-500 via-white/80 to-zinc-500 bg-clip-text text-transparent text-center;
+  }
+
+  .background {
+    @apply bg-gradient-to-r from-zinc-950 via-slate-800 to-zinc-950;
   }
 }
