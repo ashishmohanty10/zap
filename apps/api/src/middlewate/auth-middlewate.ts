@@ -12,19 +12,17 @@ export function authMiddleware(
   res: Response,
   next: NextFunction
 ) {
-  const authHeader = req.headers.authorization;
-
-  if (!authHeader) {
+  const token = req.headers.authorization;
+  console.log(token);
+  if (!token) {
     return next(createHttpError(401, "Authorization token is required"));
   }
 
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+  if (!token) {
     return next(
       createHttpError(401, "Authorization token is required or malformed")
     );
   }
-
-  const token = authHeader.split(" ")[1];
 
   try {
     const payload = jwt.verify(

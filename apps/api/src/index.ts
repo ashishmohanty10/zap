@@ -3,11 +3,21 @@ import userRouter from "./router/user-router";
 import zapRouter from "./router/zap-router";
 import { config } from "./config/config";
 import cors from "cors";
+import helmet from "helmet";
+import cookieParser from "cookie-parser";
 
 const app = express();
 const PORT = config.port || 3002;
 
-app.use(cors());
+app.use(cookieParser());
+app.use(helmet());
+app.use(
+  cors({
+    credentials: true,
+    origin: config.frontend_url,
+  })
+);
+
 app.use(express.json());
 
 app.get("/healthy", (req: Request, res: Response) => {

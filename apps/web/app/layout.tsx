@@ -27,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.className} ${geistMono.className} antialiased background`}
+        className={`${geistSans.className} ${geistMono.className} antialiased`}
       >
         <main>{children}</main>
         <Toaster richColors />

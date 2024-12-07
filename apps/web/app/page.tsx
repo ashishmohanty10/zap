@@ -6,7 +6,7 @@ import { Workflow } from "@/components/landing-page/work";
 
 export default function Home() {
   return (
-    <div className="max-w-7xl mx-auto">
+    <div className="max-w-7xl mx-auto background">
       <Navbar />
       <Hero />
       <Feature />

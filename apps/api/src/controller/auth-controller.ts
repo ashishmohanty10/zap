@@ -48,6 +48,13 @@ export async function signup(req: Request, res: Response, next: NextFunction) {
         }
       );
 
+      res.cookie("access_Token", token, {
+        httpOnly: true,
+        secure: config.env === "production",
+        maxAge: 7 * 24 * 60 * 60 * 1000,
+        sameSite: "strict",
+      });
+
       res.status(201).json({
         message: `${newUser.id} register successfully`,
         access_token: token,
@@ -103,6 +110,12 @@ export async function login(req: Request, res: Response, next: NextFunction) {
       { expiresIn: "7d" }
     );
 
+    res.cookie("access_Token", token, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+      sameSite: "strict",
+    });
     res.status(200).json({
       message: `${existingUser.id} logged in successfully`,
       access_Token: token,
