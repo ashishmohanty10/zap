@@ -1,9 +1,9 @@
-import { AuthButton } from "../auth";
+import { Signup } from "../auth";
 import { Separator } from "../separator";
 
 export function Hero() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen space-y-12 py-32 ">
+    <div className="flex flex-col items-center justify-center min-h-screen space-y-12 py-52">
       <div className="w-full text-center mx-auto space-y-4">
         <h1 className="text-6xl font-bold title tracking-normal leading-2 w-[70%] mx-auto">
           Simplify Your Workflows with Custom Automations
@@ -16,9 +16,9 @@ export function Hero() {
         </p>
       </div>
 
-      <AuthButton />
+      <Signup text="Get Started Now" />
 
-      <div className="bg-slate-900 rounded-md border-8 border-stone-600 shadow-lg h-[600px] w-[1200px]"></div>
+      <div className="bg-zinc-900 rounded-md border-8 border-stone-600 shadow-lg h-[600px] w-[1200px] py-16"></div>
 
       <Separator />
     </div>

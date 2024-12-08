@@ -2,6 +2,7 @@ import {
   Activity,
   ArrowRight,
   Clock,
+  LayoutDashboard,
   Lock,
   Play,
   Rocket,
@@ -88,5 +89,15 @@ export const workflow = [
     title: "Automate the Process",
     description: "Let ZapFlow handle the rest automatically",
     icon: Play,
+  },
+];
+
+import { FilePlus, Settings, Swords } from "lucide-react";
+
+export const sidebar = [
+  {
+    name: "Dashboard",
+    href: "/dashboard",
+    icon: LayoutDashboard,
   },
 ];

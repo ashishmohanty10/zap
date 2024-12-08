@@ -21,7 +21,10 @@ export function Workflow() {
 
       <div className="grid grid-cols-3 gap-10 px-4 md:px-6">
         {workflow.map((item, idx) => (
-          <Card className="bg-bgCard border-stone-700 hover:border-stone-400">
+          <Card
+            className="bg-bgCard border-stone-700 hover:border-stone-400"
+            key={idx}
+          >
             <CardHeader className="space-y-2">
               <h3 className="text-3xl text-slate-400 font-semibold">
                 0{idx + 1}

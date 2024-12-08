@@ -22,7 +22,7 @@ module.exports = {
         cardHeight: "500px",
       },
       colors: {
-        bgCard: "#020617",
+        bgCard: "#18181b",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

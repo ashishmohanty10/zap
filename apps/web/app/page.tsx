@@ -6,12 +6,14 @@ import { Workflow } from "@/components/landing-page/work";
 
 export default function Home() {
   return (
-    <div className="max-w-7xl mx-auto background">
-      <Navbar />
-      <Hero />
-      <Feature />
-      <Workflow />
-      <FooterSection />
+    <div className="background">
+      <div className="max-w-7xl mx-auto ">
+        <Navbar />
+        <Hero />
+        <Feature />
+        <Workflow />
+        <FooterSection />
+      </div>
     </div>
   );
 }

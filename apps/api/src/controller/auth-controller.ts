@@ -115,13 +115,33 @@ export async function login(req: Request, res: Response, next: NextFunction) {
       secure: process.env.NODE_ENV === "production",
       maxAge: 7 * 24 * 60 * 60 * 1000,
       sameSite: "strict",
+      path: "/",
     });
+
     res.status(200).json({
       message: `${existingUser.id} logged in successfully`,
       access_Token: token,
     });
   } catch (error) {
     console.log("error", error);
+    return next(createHttpError(500, "Internal server error"));
+  }
+}
+
+export async function logout(req: Request, res: Response, next: NextFunction) {
+  try {
+    res.cookie("access_Token", "", {
+      httpOnly: true,
+      sameSite: "strict",
+      path: "/",
+      secure: process.env.NODE_ENV === "production",
+      maxAge: -1,
+    });
+    res.status(200).json({
+      message: "Logged out successfully",
+    });
+  } catch (error) {
+    console.error("Logout error:", error);
     return next(createHttpError(500, "Internal server error"));
   }
 }

@@ -16,6 +16,7 @@ import { Input } from "@repo/ui/components/ui/input";
 import { Button } from "@repo/ui/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
+import { headers } from "next/headers";
 
 export default function Register() {
   const URL = process.env.NEXT_PUBLIC_BACKEND_URL;
