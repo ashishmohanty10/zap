@@ -2,7 +2,7 @@
 
 import { Button } from "@repo/ui/components/ui/button";
 import axios from "axios";
-import { Loader } from "lucide-react";
+import { Loader, LucideLogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -33,7 +33,14 @@ export function Logout({ text }: { text: string }) {
       className="px-8 w-24 bg-red-600 flex items-center justify-center"
       variant="destructive"
     >
-      {loader ? <Loader className="animate-spin" /> : <p>{text}</p>}
+      {loader ? (
+        <Loader className="animate-spin" />
+      ) : (
+        <div className="flex items-center gap-2">
+          <p>{text}</p>
+          <LucideLogOut />
+        </div>
+      )}
     </Button>
   );
 }

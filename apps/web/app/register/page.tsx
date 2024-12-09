@@ -78,7 +78,7 @@ export default function Register() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-lg text-slate-300">
+                  <FormLabel className="text-lg text-slate-300 ">
                     Username
                   </FormLabel>
                   <FormControl>
@@ -86,7 +86,7 @@ export default function Register() {
                       placeholder="Username..."
                       {...field}
                       type="text"
-                      className="text-zinc-400 py-5 text-lg"
+                      className="text-zinc-400 py-5 text-lg border border-zinc-200"
                     />
                   </FormControl>
                 </FormItem>
@@ -97,7 +97,7 @@ export default function Register() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-lg text-slate-300">
+                  <FormLabel className="text-lg text-slate-300 ">
                     Email
                   </FormLabel>
                   <FormControl>
@@ -105,7 +105,7 @@ export default function Register() {
                       placeholder="Email..."
                       {...field}
                       type="email"
-                      className="text-zinc-400 py-5 text-lg"
+                      className="text-zinc-400 py-5 text-lg border border-zinc-200"
                     />
                   </FormControl>
                 </FormItem>
@@ -123,7 +123,7 @@ export default function Register() {
                     <Input
                       placeholder="Password..."
                       {...field}
-                      className="text-zinc-400 py-5 text-lg"
+                      className="text-zinc-400 py-5 text-lg border border-zinc-200"
                       type="password"
                     />
                   </FormControl>

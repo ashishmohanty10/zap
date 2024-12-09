@@ -40,7 +40,7 @@ export default function RootLayout({
                 <ThemeToggle />
                 <Logout text="Logout" />
               </div>
-              <div className="p-5">{children}</div>
+              <div className="p-10">{children}</div>
             </div>
           </div>
         </ThemeProvider>

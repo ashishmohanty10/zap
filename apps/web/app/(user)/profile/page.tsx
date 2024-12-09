@@ -14,6 +14,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@repo/ui/components/ui/card";
+import { PenBox } from "lucide-react";
 
 export default function Profile() {
   return (
@@ -27,15 +28,19 @@ export default function Profile() {
           </Avatar>
         </div>
 
-        <Card className="w-full border">
-          <CardHeader>
-            <CardTitle className="text-3xl">Your Profile</CardTitle>
+        <Card className="w-full border space-y-5">
+          <CardHeader className="flex w-full flex-row items-center justify-between">
+            <CardTitle className="text-3xl">My Account</CardTitle>
+            <Button>
+              <span>Edit Profile</span>
+              <PenBox />
+            </Button>
           </CardHeader>
 
-          <CardContent>
+          <CardContent className="border-b">
             <CardDescription className="space-y-5">
               <div className="space-y-2">
-                <p className="text-xl">Username</p>
+                <p className="text-xl">Display Name</p>
                 <p>TestUser1</p>
               </div>
               <div className="space-y-2">
@@ -45,9 +50,11 @@ export default function Profile() {
             </CardDescription>
           </CardContent>
 
-          <CardFooter className="flex items-center space-x-4">
-            <Button>Update</Button>
-            <Button>Save</Button>
+          <CardFooter className="flex flex-col space-y-5 items-start">
+            <p>Danger Zone</p>
+            <Button variant="destructive" className="bg-red-600">
+              Delete Account
+            </Button>
           </CardFooter>
         </Card>
       </div>

@@ -1,3 +1,32 @@
+import { Button } from "@repo/ui/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@repo/ui/components/ui/card";
+import { Zap } from "lucide-react";
+
 export default function DashboardPage() {
-  return <h2>Dashboard Page</h2>;
+  return (
+    <div className="space-y-5">
+      <div className="flex items-center justify-end">
+        <Button>
+          <Zap className="animate-pulse" />
+          Create Zaps
+        </Button>
+      </div>
+
+      <Card>
+        <CardHeader>
+          <CardTitle>Your Zaps</CardTitle>
+        </CardHeader>
+
+        <CardContent>
+          <CardDescription></CardDescription>
+        </CardContent>
+      </Card>
+    </div>
+  );
 }

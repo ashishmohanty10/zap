@@ -79,7 +79,7 @@ export default function Login() {
                       placeholder="Email..."
                       {...field}
                       type="email"
-                      className="text-zinc-400 py-5 text-lg"
+                      className="text-zinc-400 py-5 text-lg border border-zinc-200"
                     />
                   </FormControl>
                 </FormItem>
@@ -97,14 +97,14 @@ export default function Login() {
                     <Input
                       placeholder="Password..."
                       {...field}
-                      className="text-zinc-400 py-5 text-lg"
+                      className="text-zinc-400 py-5 text-lg border border-zinc-200"
                       type="password"
                     />
                   </FormControl>
                 </FormItem>
               )}
             />
-            <Button type="submit" variant="secondary" className="w-full py-5">
+            <Button type="submit" className="w-full py-5" variant="secondary">
               Submit
             </Button>
 
