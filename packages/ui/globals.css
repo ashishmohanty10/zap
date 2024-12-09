@@ -73,6 +73,6 @@
   }
 
   .background {
-    @apply bg-gradient-to-r from-zinc-950 via-zinc-800 to-zinc-950;
+    @apply bg-gradient-to-r from-black via-zinc-800 to-black;
   }
 }

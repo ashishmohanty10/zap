@@ -5,21 +5,24 @@ export function middleware(req: NextRequest) {
 
   const publicRoutes = ["/login", "/register", "/"];
 
-  if (publicRoutes.includes(pathname)) {
+  const protectedRoutes = ["/dashboard", "/profile", "/settings"];
+
+  const token = req.cookies.get("access_Token");
+
+  if (token) {
+    if (publicRoutes.includes(pathname)) {
+      return NextResponse.redirect(new URL("/dashboard", req.url));
+    }
     return NextResponse.next();
   }
 
-  if (pathname.startsWith("/dashboard")) {
-    const token = req.cookies.get("access_Token");
-
-    if (!token) {
-      return NextResponse.redirect(new URL("/login", req.url));
-    }
+  if (protectedRoutes.includes(pathname)) {
+    return NextResponse.redirect(new URL("/register", req.url));
   }
 
   return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/dashboard"],
+  matcher: ["/", "/login", "/register", "/dashboard"],
 };

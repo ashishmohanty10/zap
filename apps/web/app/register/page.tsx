@@ -71,7 +71,7 @@ export default function Register() {
         <Form {...register}>
           <form
             onSubmit={register.handleSubmit(onSubmit)}
-            className="space-y-8"
+            className="space-y-4"
           >
             <FormField
               control={register.control}

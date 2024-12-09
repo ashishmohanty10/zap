@@ -1,6 +1,6 @@
 import { DashboardItems } from "@/components/dashboard/dashboard-items";
-import { ThemeProvider } from "@/components/theme-provider";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeProvider } from "@/components/theme/theme-provider";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import "@repo/ui/globals.css";
 import { ZapOff } from "lucide-react";
 import Link from "next/link";

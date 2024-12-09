@@ -92,8 +92,6 @@ export const workflow = [
   },
 ];
 
-import { FilePlus, Settings, Swords } from "lucide-react";
-
 export const sidebar = [
   {
     name: "Dashboard",
