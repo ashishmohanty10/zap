@@ -1,4 +1,4 @@
-import { Signup } from "../auth";
+import { Signup } from "../auth/auth";
 import { Separator } from "../separator";
 
 export function Hero() {

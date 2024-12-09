@@ -4,7 +4,7 @@ import { navLinks } from "@/utlis/constants";
 import { cn } from "@repo/ui/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Login, Signup } from "../auth";
+import { Login, Signup } from "../auth/auth";
 import { motion } from "motion/react";
 import { useEffect } from "react";
 import axios from "axios";

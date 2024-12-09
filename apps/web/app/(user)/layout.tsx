@@ -1,4 +1,5 @@
 import { DashboardItems } from "@/components/dashboard/dashboard-items";
+import { Logout } from "@/components/auth/logout";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
 import "@repo/ui/globals.css";
@@ -21,22 +22,23 @@ export default function RootLayout({
         >
           <div className="grid grid-cols-2 min-h-screen md:grid-cols-[80px_1fr]">
             <div className="hidden md:block">
-              <div className="flex flex-col justify-center min-h-screen gap-2">
-                <div className="lg:h-[60px] flex items-center justify-center border-b border-r border-zinc-700">
+              <div className="flex flex-col justify-center min-h-screen">
+                <div className="lg:h-[60px] flex items-center justify-center border-b border-r border-zinc-200 dark:border-zinc-700">
                   <Link href="/" className="">
                     <ZapOff />
                   </Link>
                 </div>
 
-                <div className="flex-1 border-r border-zinc-700">
+                <div className="flex-1 border-r border-zinc-200 dark:border-zinc-700">
                   <DashboardItems />
                 </div>
               </div>
             </div>
 
             <div>
-              <div className="h-[60px] border-b border-zinc-700 flex items-center justify-end px-10">
+              <div className="h-[60px] border-b border-zinc-200 dark:border-zinc-700 flex items-center justify-end px-10 space-x-5">
                 <ThemeToggle />
+                <Logout text="Logout" />
               </div>
               <div className="p-5">{children}</div>
             </div>
