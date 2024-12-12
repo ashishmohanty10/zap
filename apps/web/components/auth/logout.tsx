@@ -5,6 +5,7 @@ import axios from "axios";
 import { Loader, LucideLogOut } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast } from "sonner";
 
 export function Logout({ text }: { text: string }) {
   const router = useRouter();
@@ -21,9 +22,10 @@ export function Logout({ text }: { text: string }) {
       );
       router.push("/");
       setLoader(false);
-      console.log("Logged out successfully", res.data);
+      toast.success("Logout successfull!!");
     } catch (error) {
       console.log("Error while logging out", error);
+      toast.error("Unfortunately !! could not log out!!");
     }
   };
 

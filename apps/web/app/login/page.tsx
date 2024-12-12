@@ -16,6 +16,7 @@ import axios from "axios";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { toast } from "sonner";
 
 export default function Login() {
   const URL = process.env.NEXT_PUBLIC_BACKEND_URL;
@@ -40,14 +41,16 @@ export default function Login() {
           withCredentials: true,
         }
       );
-      localStorage.setItem("token", res.data.access_Token);
+
       if (res.status === 200) {
         router.push("/dashboard");
+        toast.success("User logged in successfully!!");
       } else {
         console.log("Login failed: Invalid response status or missing token");
       }
     } catch (error) {
       console.log("Error while Login", error);
+      toast.error("Error while login! Please try again");
     }
   }
 
@@ -104,7 +107,7 @@ export default function Login() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="w-full py-5" variant="secondary">
+            <Button type="submit" className="w-full" variant="secondary">
               Submit
             </Button>
 

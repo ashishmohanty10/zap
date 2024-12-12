@@ -8,7 +8,7 @@ import {
 } from "@repo/ui/components/ui/card";
 import { Zap } from "lucide-react";
 
-export default function DashboardPage() {
+export default async function DashboardPage() {
   return (
     <div className="space-y-5">
       <div className="flex items-center justify-end">

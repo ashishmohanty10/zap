@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { signupSchema, signupSchemaType } from "@repo/common";
 import axios from "axios";
+import { toast } from "sonner";
 import { useRouter } from "next/navigation";
 import {
   Form,
@@ -16,7 +17,6 @@ import { Input } from "@repo/ui/components/ui/input";
 import { Button } from "@repo/ui/components/ui/button";
 import Image from "next/image";
 import Link from "next/link";
-import { headers } from "next/headers";
 
 export default function Register() {
   const URL = process.env.NEXT_PUBLIC_BACKEND_URL;
@@ -45,14 +45,15 @@ export default function Register() {
           withCredentials: true,
         }
       );
-
       if (res.status === 201) {
         router.push("/dashboard");
+        toast.success("User registered successfully!!");
       } else {
         console.log("Register failed: Please try again after some time");
       }
     } catch (error) {
       console.log("Error while signup", error);
+      toast.error("Error while signup! Please try again");
     }
   }
   return (
