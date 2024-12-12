@@ -18,7 +18,7 @@ export function BackButton({ url }: { url: string }) {
               asChild
               size="icon"
               variant="destructive"
-              className="rounded-full p-5 bg-red-600 flex items-center justify-center"
+              className="rounded-full bg-red-600 flex items-center justify-center"
             >
               <Link href={url}>
                 <Cross className="rotate-45" />

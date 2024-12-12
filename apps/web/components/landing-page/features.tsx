@@ -15,7 +15,7 @@ export function Feature() {
           Powerful Features for Your Workflow
         </h3>
 
-        <p className="text-center text-lg font-medium text-slate-400">
+        <p className="text-center text-lg font-medium text-zinc-400">
           Everything you need to automate your work and boost productivity
         </p>
       </div>
@@ -31,11 +31,11 @@ export function Feature() {
                 <item.icon className="text-stone-300" />
               </div>
 
-              <p className="text-slate-400 font-medium text-lg">{item.title}</p>
+              <p className="text-zinc-400 font-medium text-lg">{item.title}</p>
             </CardHeader>
 
             <CardContent>
-              <CardDescription className="text-slate-400">
+              <CardDescription className="text-zinc-400">
                 {item.description}
               </CardDescription>
             </CardContent>

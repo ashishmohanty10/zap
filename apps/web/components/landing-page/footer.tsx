@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function FooterSection() {
   return (
-    <footer className="w-full py-12 text-slate-400">
+    <footer className="w-full py-12 text-zinc-400">
       <div className="px-4 md:px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-5">
@@ -80,7 +80,7 @@ export default function FooterSection() {
               <Input
                 type="email"
                 placeholder="Your email"
-                className="py-4 text-slate-400"
+                className="py-4 text-zinc-400"
               />
               <Button type="submit" className="bg-zinc-700 hover:bg-zinc-900">
                 Subscribe

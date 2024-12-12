@@ -1,4 +1,6 @@
 import { BackButton } from "@/components/back-button";
+import { DeleteAccount } from "@/components/profile/delete-account";
+import { EditProfile } from "@/components/profile/edit-profile";
 import {
   Avatar,
   AvatarFallback,
@@ -31,10 +33,7 @@ export default function Profile() {
         <Card className="w-full border space-y-5">
           <CardHeader className="flex w-full flex-row items-center justify-between">
             <CardTitle className="text-3xl">My Account</CardTitle>
-            <Button>
-              <span>Edit Profile</span>
-              <PenBox />
-            </Button>
+            <EditProfile />
           </CardHeader>
 
           <CardContent className="border-b">
@@ -52,9 +51,7 @@ export default function Profile() {
 
           <CardFooter className="flex flex-col space-y-5 items-start">
             <p>Danger Zone</p>
-            <Button variant="destructive" className="bg-red-600">
-              Delete Account
-            </Button>
+            <DeleteAccount />
           </CardFooter>
         </Card>
       </div>
