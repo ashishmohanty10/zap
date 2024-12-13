@@ -35,3 +35,45 @@ export async function getUser(
     return next(createHttpError(500, "Internal Server Error"));
   }
 }
+
+export async function deleteUser(
+  req: AuthRequest,
+  res: Response,
+  next: NextFunction
+) {
+  const id = req.user?.id;
+
+  try {
+    const user = prisma.user.findUnique({
+      where: {
+        id,
+      },
+    });
+
+    if (!user) {
+      return next(createHttpError(404, "User not found"));
+    }
+
+    await prisma.user.delete({
+      where: { id },
+    });
+
+    res.cookie("access_Token", "", {
+      httpOnly: true,
+      sameSite: "strict",
+      path: "/",
+      secure: process.env.NODE_ENV === "production",
+      maxAge: -1,
+    });
+
+    res.status(200).json({
+      message: "Your account deleted successfully!!",
+    });
+  } catch (error) {
+    console.error(
+      "Error while fetching User Details:",
+      error instanceof Error ? error.stack : error
+    );
+    return next(createHttpError(500, "Internal Server Error"));
+  }
+}

@@ -43,7 +43,7 @@ export default async function Profile() {
 
     user = await response.json();
   } catch (error) {
-    console.log("error while fetchign user data", error);
+    console.log("--error while fetchign user data", error);
   }
 
   return (

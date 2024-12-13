@@ -50,6 +50,7 @@ export default function Register() {
         toast.success("User registered successfully!!");
       } else {
         console.log("Register failed: Please try again after some time");
+        toast.error("Register failed: Please try again after some time");
       }
     } catch (error) {
       console.log("Error while signup", error);

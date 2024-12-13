@@ -46,10 +46,9 @@ export default function Login() {
         router.push("/dashboard");
         toast.success("User logged in successfully!!");
       } else {
-        console.log("Login failed: Invalid response status or missing token");
+        toast.error("Error while login! Please try again");
       }
     } catch (error) {
-      console.log("Error while Login", error);
       toast.error("Error while login! Please try again");
     }
   }
