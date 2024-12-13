@@ -14,7 +14,7 @@ export default async function DashboardPage() {
     <div className="space-y-5">
       <div className="flex items-center justify-end">
         <Button>
-          <Link href="/createzap">
+          <Link href="/createzap" className="flex items-center gap-2">
             <Zap className="animate-pulse" />
             Create Zaps
           </Link>

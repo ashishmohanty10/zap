@@ -23,13 +23,9 @@ export function DeleteAccount() {
 
   async function handleDelete() {
     try {
-      await axios.post(
-        `${URL}/api/v1/user/delete`,
-
-        {
-          withCredentials: true,
-        }
-      );
+      await axios.delete(`${URL}/api/v1/user/delete`, {
+        withCredentials: true,
+      });
       toast.success("Account deleted successfully!");
       router.push("/");
     } catch (error) {
