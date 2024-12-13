@@ -14,7 +14,7 @@ import { Button } from "@repo/ui/components/ui/button";
 export function DeleteAccount() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger>
+      <AlertDialogTrigger asChild>
         <Button variant="destructive" className="bg-red-600">
           Delete Account
         </Button>

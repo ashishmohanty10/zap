@@ -6,7 +6,6 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "@repo/ui/components/ui/avatar";
-import { Button } from "@repo/ui/components/ui/button";
 
 import {
   Card,
@@ -16,9 +15,8 @@ import {
   CardHeader,
   CardTitle,
 } from "@repo/ui/components/ui/card";
-import { PenBox } from "lucide-react";
 
-export default function Profile() {
+export default async function Profile() {
   return (
     <div className="max-w-7xl mx-auto space-y-5">
       <BackButton url="/dashboard" />
@@ -44,7 +42,7 @@ export default function Profile() {
               </div>
               <div className="space-y-2">
                 <p className="text-xl">Email</p>
-                <p>testuser1@gmail.com</p>
+                <p>sdfsdfsdfsdfsdf@gmail.com</p>
               </div>
             </CardDescription>
           </CardContent>

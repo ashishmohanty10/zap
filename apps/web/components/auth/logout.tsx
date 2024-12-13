@@ -15,7 +15,7 @@ export function Logout({ text }: { text: string }) {
   const logoutfunc = async () => {
     try {
       setLoader(true);
-      const res = await axios.post(
+      await axios.post(
         `${URL}/api/v1/user/logout`,
         {},
         { withCredentials: true }

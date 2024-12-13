@@ -15,7 +15,7 @@ import { PenBox } from "lucide-react";
 export function EditProfile() {
   return (
     <AlertDialog>
-      <AlertDialogTrigger>
+      <AlertDialogTrigger asChild>
         <Button>
           <span>Edit Profile</span>
           <PenBox />

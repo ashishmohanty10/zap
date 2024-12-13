@@ -10,6 +10,6 @@ userRouter.post("/login", login);
 userRouter.post("/logout", logout);
 
 userRouter.use(authMiddleware);
-userRouter.get("/user", getUser);
+userRouter.get("/", getUser);
 
 export default userRouter;

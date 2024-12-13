@@ -12,7 +12,7 @@ export function authMiddleware(
   res: Response,
   next: NextFunction
 ) {
-  const token = req.headers.authorization;
+  const token = req.cookies.access_Token;
   if (!token) {
     return next(createHttpError(401, "Authorization token is required"));
   }
