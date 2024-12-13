@@ -15,8 +15,37 @@ import {
   CardHeader,
   CardTitle,
 } from "@repo/ui/components/ui/card";
+import { cookies } from "next/headers";
+
+interface User {
+  email: string;
+  name: string;
+}
 
 export default async function Profile() {
+  const URL = process.env.NEXT_PUBLIC_BACKEND_URL;
+  const cookieStore = cookies();
+  const accessToken = (await cookieStore).get("access_Token")?.value;
+
+  let user: User | null = null;
+
+  try {
+    const response = await fetch(`${URL}/api/v1/user`, {
+      headers: {
+        Cookie: `access_Token=${accessToken}`,
+      },
+      cache: "no-store",
+    });
+
+    if (!response.ok) {
+      throw new Error(await response.text());
+    }
+
+    user = await response.json();
+  } catch (error) {
+    console.log("error while fetchign user data", error);
+  }
+
   return (
     <div className="max-w-7xl mx-auto space-y-5">
       <BackButton url="/dashboard" />
@@ -38,11 +67,11 @@ export default async function Profile() {
             <CardDescription className="space-y-5">
               <div className="space-y-2">
                 <p className="text-xl">Display Name</p>
-                <p>TestUser1</p>
+                <p>{user?.name}</p>
               </div>
               <div className="space-y-2">
                 <p className="text-xl">Email</p>
-                <p>sdfsdfsdfsdfsdf@gmail.com</p>
+                <p>{user?.email}</p>
               </div>
             </CardDescription>
           </CardContent>

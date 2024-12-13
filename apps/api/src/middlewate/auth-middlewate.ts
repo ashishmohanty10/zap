@@ -17,12 +17,6 @@ export function authMiddleware(
     return next(createHttpError(401, "Authorization token is required"));
   }
 
-  if (!token) {
-    return next(
-      createHttpError(401, "Authorization token is required or malformed")
-    );
-  }
-
   try {
     const payload = jwt.verify(
       token as unknown as string,

@@ -7,14 +7,17 @@ import {
   CardTitle,
 } from "@repo/ui/components/ui/card";
 import { Zap } from "lucide-react";
+import Link from "next/link";
 
 export default async function DashboardPage() {
   return (
     <div className="space-y-5">
       <div className="flex items-center justify-end">
         <Button>
-          <Zap className="animate-pulse" />
-          Create Zaps
+          <Link href="/createzap">
+            <Zap className="animate-pulse" />
+            Create Zaps
+          </Link>
         </Button>
       </div>
 
